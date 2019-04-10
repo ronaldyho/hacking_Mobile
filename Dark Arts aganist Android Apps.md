@@ -25,7 +25,10 @@ Reference:
 
 ## Dark Art 2: *Function Hooking*
 
-*Reference:*
+*Function Hooking with Xposed*
+- http://tiny.cc/bsidesroc-xposed
+
+*Other References:*
 
 - Basic Security Testing, OWASP (Oct 28, 2018), https://github.com/OWASP/owasp-mstg/blob/master/Document/0x05b-Basic-Security_Testing.md
 - Encryption and VPNs alone do not protect you from Pegasus/Trident, Lookout (Sep 2, 2016), https://blog.lookout.com/pegasus-trident-encryption-vpn-protection-detection 
