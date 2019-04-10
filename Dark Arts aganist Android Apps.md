@@ -20,6 +20,9 @@ A hypothetical attack scenario can go like this:
 - The malicious app can record our Apps' login password. After that it can record all the screen taps and characters typed by the end-user. 
   -- Then, at a time when the actual (human) user is not using the app (e.g. sleeping), it can put the device offline (airplane mode). After that, launch the App, sign in via the captured Username & Password, and performs more screen captures of all the conversations in the screens ... 
 
+Sample:
+- Accessibility Hack Demo by some random guy | https://github.com/bpr10/AccessibilityDemo
+
 Reference: 
 - Google is Threatening to Remove Apps with Accessibility Services from the Play Store, Mishaal Rahman (Nov 14, 2017), https://www.xda-developers.com/google-threatening-removal-accessibility-services-play-store/
 
