@@ -47,7 +47,7 @@ And just random linux stuff at the moment
 - IRQ /dev/interrupt (Requires kernel-level capabilities)
   -- See "Side channel attack", above
 - EVENTS /dev/input/eventX (Requires possibly root permissions)
-  -- http://manpages.ubuntu.com/manpages/trusty/man1/evtest.1.html
+  -- EVTEST | https://thehackerdiary.wordpress.com/2017/04/21/exploring-devinput-1/
 - AUTOMATOR uiautomator (Requires ADB permissions) 
   -- https://www.pentestpartners.com/security-blog/key-sniffing-with-android/
 
