@@ -17,8 +17,7 @@ The default android keyboard that comes with most Android phones are vulnerable 
 Accessibility permissions allow the App the to record/simulate touches and key-presses. 
 
 A hypothetical attack scenario can go like this:
-- The malicious app can record our Apps' login password. After that it can record all the screen taps and characters typed by the end-user. 
-  -- Then, at a time when the actual (human) user is not using the app (e.g. sleeping), it can put the device offline (airplane mode). After that, launch the App, sign in via the captured Username & Password, and performs more screen captures of all the conversations in the screens ... 
+- The malicious app can record our Apps' login password. While the user is using his/her apps, the malware will capture screenshots/videos of the user's activity. 
 
 Sample:
 - Accessibility Hack Demo by some random guy | https://github.com/bpr10/AccessibilityDemo
