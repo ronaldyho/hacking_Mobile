@@ -1,8 +1,11 @@
 
 
-Getting Started, by 
+Getting Started | https://stackoverflow.com/questions/3437686/how-to-use-adb-to-send-touch-events-to-device-using-sendevent-command#5392547
 
-https://stackoverflow.com/questions/3437686/how-to-use-adb-to-send-touch-events-to-device-using-sendevent-command#5392547
+Automating Games by EngineerMan | https://www.youtube.com/watch?v=Du__JfXqsAs
+* https://github.com/engineer-man/youtube/tree/master/105
+
+
 ```
 uiautomator events
 adb shell getevent -l
