@@ -1,4 +1,4 @@
-def compare_images2(imageAfile, imageBfile, title):
+def compare_images(imageAfile, imageBfile, title):
     # https://www.pyimagesearch.com/2014/09/15/python-compare-two-images/
     ### As of Verion 14.0, - ``skimage.measure.structural_similarity`` has been removed. Use ``skimage.measure.compare_ssim`` instead.
     # Pre-requisites
