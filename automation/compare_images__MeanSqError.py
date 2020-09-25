@@ -1,10 +1,11 @@
-def compare_images(imageAfile, imageBfile, title):
+def compare_images(imageA, imageB, title):
     # https://www.pyimagesearch.com/2014/09/15/python-compare-two-images/
-    ### As of Verion 14.0, - ``skimage.measure.structural_similarity`` has been removed. Use ``skimage.measure.compare_ssim`` instead.
+    ### As of Verion 0.14 - ``skimage.measure.structural_similarity`` has been removed. Use ``skimage.measure.compare_ssim`` instead.
+	### As of Version 0.18 - skimage.measure.compare_ssim has been moved to skimage.metrics.structural_similarity
     # Pre-requisites
     ### pip3 install scikit-image numpy matplotlib opencv-python
 
-    from skimage.measure import compare_ssim as ssim
+    from skimage.metrics import structural_similarity as ssim
     import matplotlib.pyplot as plt
     import numpy as np
     import cv2    # opencv-python
@@ -12,7 +13,7 @@ def compare_images(imageAfile, imageBfile, title):
 #    imageA = cv2.imread(imageAfile)
 #    imageB = cv2.imread(imageBfile)
 
-    def mse(imageAfile, imageBfile):
+    def mse(imageA, imageB):
 #        import cv2
 #        imageA = cv2.imread(imageAfile)
 #        imageB = cv2.imread(imageBfile)
@@ -30,7 +31,7 @@ def compare_images(imageAfile, imageBfile, title):
 
     # compute the mean squared error and structural similarity
     # index for the images
-    m = mse(imageAfile, imageBfile)
+    m = mse(imageA, imageB)
     s = ssim(imageA, imageB)
 
     # setup the figure
@@ -56,7 +57,7 @@ def compare_images(imageAfile, imageBfile, title):
 #capture_Screenshot()
 #compare_images1( "out_qima.png", "qima.png" )
 
-from skimage.measure import compare_ssim as ssim
+from skimage.metrics import structural_similarity as ssim
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2    # opencv-python
@@ -74,19 +75,19 @@ contrast = cv2.cvtColor(contrast, cv2.COLOR_BGR2GRAY)
 shopped = cv2.cvtColor(shopped, cv2.COLOR_BGR2GRAY)
 
 # initialize the figure
-fig = plt.figure("Images")
-images = ("Original", original), ("Contrast", contrast), ("Photoshopped", shopped)
+#fig = plt.figure("Images")
+#images = ("Original", original), ("Contrast", contrast), ("Photoshopped", shopped)
 
 # loop over the images
-for (i, (name, image)) in enumerate(images):
+#for (i, (name, image)) in enumerate(images):
     # show the image
-    ax = fig.add_subplot(1, 3, i + 1)
-    ax.set_title(name)
-    plt.imshow(image, cmap = plt.cm.gray)
-    plt.axis("off")
+#    ax = fig.add_subplot(1, 3, i + 1)
+#    ax.set_title(name)
+#    plt.imshow(image, cmap = plt.cm.gray)
+#    plt.axis("off")
 
 # show the figure
-plt.show()
+#plt.show()
 
 # compare the images
 compare_images(original, original, "Original vs. Original")
