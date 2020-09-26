@@ -1,5 +1,3 @@
-### This script works for "Try Again" on Story Mode 
-
 import os, signal, subprocess
 import time
 
@@ -23,8 +21,7 @@ def capture_Screenshot( filename ):
     pipe = subprocess.Popen(cmd,
                         stdin=subprocess.PIPE,
                         stdout=subprocess.PIPE, shell=True)
-
-    pipe.kill()
+    pipe.wait()
     #os.killpg(os.getpgid(pipe.pid), signal.SIGTERM)  
 
 def crop_picture( img_in ):
@@ -53,7 +50,7 @@ def crop_picture( img_in ):
     return imageFile_out
 
 
-def compare_images( img1, img2 ):
+def compare_images( img1, img2, SSIM_FACTOR=0.8 ):
     from skimage.metrics import structural_similarity as ssim
     import cv2    # opencv-python
 
@@ -65,9 +62,11 @@ def compare_images( img1, img2 ):
     imageB = cv2.imread( img2 )
     image_B = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
 
+    ### Structural Similarity Measure
     s = ssim(image_A, image_B)
+    print("SSIM(x,y) = " + str(s))
     
-    if s > 0.8:
+    if s > SSIM_FACTOR:
         return True
     else:
         return False
@@ -83,6 +82,8 @@ def click_TryAgain():
 
 while(True):
     fileA1 = "sinoalice.png"
+#    click_TryAgain()
+#    time.sleep(30)
 
     print("Captures Screenshot")
     capture_Screenshot( fileA1 )
@@ -93,11 +94,14 @@ while(True):
 
 
     print("Compare Images")
-    boolComp = compare_images( fileA2, "sinoalice_Try_Again.png" )
+    boolComp = compare_images( fileA2, "sinoalice_Try_Again.png", SSIM_FACTOR=0.7 )
 
 
-    print("Click and Go")
     if boolComp == True:
+        print("Click and Go ##")
         click_TryAgain()
 
-    time.sleep(30)
+    print("Sleep")
+    time.sleep(15)
+
+    print("\n")
